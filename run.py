@@ -1,6 +1,6 @@
 import json
 import asyncio
-from beethoven.bot import bot, setup
+from assets.bot import bot, setup
 
 # Load config
 with open("config.json") as f:

@@ -20,17 +20,17 @@ async def on_ready():
 
 # Load all commands dynamically from the commands folder
 async def load_commands():
-    for filename in os.listdir("./beethoven/commands"):
+    for filename in os.listdir("./assets/commands"):
         if filename.endswith(".py") and filename != "__init__.py":
             try:
-                await bot.load_extension(f"beethoven.commands.{filename[:-3]}")
+                await bot.load_extension(f"assets.commands.{filename[:-3]}")
                 print(f"Loaded extension {filename[:-3]}")
             except Exception as e:
                 print(f"Failed to load extension {filename[:-3]}: {e}")
 
 async def setup():
     await load_commands()
-    await bot.load_extension("beethoven.slash_commands")
+    await bot.load_extension("assets.slash_commands")
 
 # Entry point
 if __name__ == "__main__":
